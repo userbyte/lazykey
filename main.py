@@ -1,11 +1,9 @@
 ## lazykey
 ## 10/16/2022
 ## Written by userbyte
-## Description: key-holder
+## Description: key-holder for lazy cunts
 
-# holding 
-
-version = '0.1.2.6'
+version = '0.1.2.7'
 print('''
  ____ ____ ____ 
 ||L |||Z |||K ||
@@ -52,15 +50,18 @@ def toggle_keyhold():
     global curheld
     if keyhold == True:
         keyhold = False
-        print('keyhold now false')
+        print(f'keyhold now {keyhold}')
         for k in curheld:
             print(f'kh: released {k}')
             # kb.release(k)
             pyautogui.keyUp('w')
             curheld.remove(k)
     elif keyhold == False:
+        if len(keys) == 0:
+            print('kh: no keys are in the keylist, not doing keyhold')
+            return
         keyhold = True
-        print(f'keyhold now true (with keys: {keys})')
+        print(f'keyhold now {keyhold} (with keys: {keys})')
         print('kh: please let go of the keys within the next 5 seconds or this wont work')
         sleep(5)
         print('kh: ok, doing the thing...')
