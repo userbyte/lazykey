@@ -14,7 +14,7 @@ print(f'starting lazykey v{version}')
 
 from pynput import keyboard
 from time import sleep
-import pyautogui # need to user this because pynput no longer works to hold keys for some reason, but its fine
+import pyautogui # need to use this because pynput no longer works to hold keys for some reason, but its fine
 import signal
 
 kb = keyboard.Controller()
